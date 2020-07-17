@@ -15,7 +15,7 @@ const NumPartitions = 4
 func main(){
 	// get user integers
 	userInputs := getUserInputs()
-	
+
 	// partition user inputs into 4 parts
 	arrayPartitions := partition(userInputs)
 
@@ -23,6 +23,7 @@ func main(){
 	var wg sync.WaitGroup
 	wg.Add(NumPartitions) // 1 goroutine per partition
 	for i := 0 ; i < NumPartitions; i++ {
+		// could also have used channels here 
 		go sortPartition(&arrayPartitions[i], &wg) 
 	}
 	wg.Wait()
