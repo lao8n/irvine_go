@@ -66,18 +66,18 @@ func (p *Philosopher) eat(wg *sync.WaitGroup, hostPermissionChannel chan int){
 		select {
 			// if left available first
 			case <- p.leftChopstick.available:
-				fmt.Println(p.id, " has left ", p.leftChopstick.id, " waiting for right ", p.rightChopstick.id)
+				//fmt.Println(p.id, " has left ", p.leftChopstick.id, " waiting for right ", p.rightChopstick.id)
 				// wait for right
 				<- p.rightChopstick.available
 			// if right available first
 			case <- p.rightChopstick.available:
-				fmt.Println(p.id, " has right", p.rightChopstick.id, " waiting for left", p.leftChopstick.id)
+				//fmt.Println(p.id, " has right", p.rightChopstick.id, " waiting for left", p.leftChopstick.id)
 				// wait for left
 				<- p.leftChopstick.available
 		}
 
 		// eat
-		fmt.Println("starting to eat", p.id)
+		fmt.Println("starting to eat  ", p.id)
 
 		// finish eating - drop chopsticks
 		fmt.Println("finishing eating ", p.id)
