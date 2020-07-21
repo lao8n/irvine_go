@@ -29,11 +29,11 @@ func main(){
 
 	// setup philosophers
 	// use 0-4 to make modulo arithmetic work
-	philosophers := make([] *Philosopher, numPhilosophers)
+	philosophers := make([] *Philosopher, 0, numPhilosophers)
 	for i := 0; i < 5; i++ {
 		// switch to id 1-5
 		philosopher := &Philosopher{i + 1, chopsticks[i], chopsticks[ (i+1) % 5 ]}
-		philosophers[i] = philosopher
+		philosophers = append(philosophers, philosopher)
 	}
 
 	// setup host
