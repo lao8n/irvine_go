@@ -22,11 +22,6 @@ func main(){
 		chopsticks = append(chopsticks, chopstick) 
 	}
 
-	// setup host 
-	// all share same channel
-	hostChannel := make(chan int, 1)
-	hostChannel <- 0
-
 	// setup philosophers
 	// use 0-4 to make modulo arithmetic work
 	philosophers := make([] *Philosopher, 0, numPhilosophers)
