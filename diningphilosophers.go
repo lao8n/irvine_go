@@ -13,7 +13,7 @@ func main(){
 
 	// setup chopsticks
 	// use 0-4 to make modulo arithmetic work
-	chopsticks := make([] *Chopstick, 0, numPhilosophers)
+	chopsticks := make([] *Chopstick, 0, numChopsticks)
 	for i := 0; i < numChopsticks; i++ {
 		chopstickChannel := make(chan bool, 1)
 		// switch to id 1-5
